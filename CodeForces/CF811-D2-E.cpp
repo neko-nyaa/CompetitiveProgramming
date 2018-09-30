@@ -1,3 +1,14 @@
+/*
+      https://codeforces.com/contest/811/problem/E
+
+      - The query-answering type of problem immediately suggests a tree data structure. Here a segment tree was used.
+
+      - Suppose we divide the matrix in half, and we can solve each half with some simple DFS, we can merge the halves based only on their border.
+
+      - The hardest part now is how to correctly merge them, and how to save enough information in each node to re-use them for the next merges.
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -5,25 +16,52 @@ typedef long long ll;
 
 struct node{
 	int cc, l, r;
+	vector<int> left = vector<int>(10);
+	vector<int> right = vector<int>(10);
 };
 
 int n, m, q;
 int a[10][100001];
+int f[2000008];
 vector<node> tree(400005);
 
-node operator + (const node& l, const node &r) {
+int find(int x) {
+      while (x != f[x]) x = f[x];
+      return x;
+}
+
+node operator + (node l, node r) {
       node ans;
 
       if (l.cc == -1) return r;
       if (r.cc == -1) return l;
 
-	ans.cc = l.cc + r.cc;
-      ans.l = l.l; ans.r = r.r;
-      int left = l.r, right = r.l;
       for (int i = 0; i < n; i++) {
-            if (a[i][left] == a[i][right]) ans.cc--;
+            f[l.left[i]] = l.left[i];
+            f[l.right[i]] = l.right[i];
+            f[r.left[i]] = r.left[i];
+            f[r.right[i]] = r.right[i];
       }
 
+	ans.cc = l.cc + r.cc;
+      ans.l = l.l; ans.r = r.r;
+
+      for (int i = 0; i < n; i++) {
+            if (a[i][l.r] == a[i][r.l]) {
+                  int x = find(l.right[i]);
+                  int y = find(r.left[i]);
+
+                  if (x != y) {
+                        ans.cc--;
+                        f[x] = y;
+                  }
+            }
+      }
+
+      for (int i = 0; i < n; i++) {
+            ans.left[i] = find(l.left[i]);
+            ans.right[i] = find(r.right[i]);
+      }
 	return ans;
 }
 
@@ -32,8 +70,14 @@ void build(int p, int start, int end) {
             tree[p].cc = n;
             tree[p].l = tree[p].r = start;
 
+            tree[p].left[0] = tree[p].right[0] = start*n;
             for (int i = 1; i < n; i++) {
-                  if (a[i][start] == a[i-1][start]) tree[p].cc--;
+                  if (a[i][start] == a[i-1][start]) {
+                        tree[p].cc--;
+                        tree[p].left[i] = tree[p].right[i] = tree[p].left[i-1];
+                  } else {
+                        tree[p].left[i] = tree[p].right[i] = tree[p].left[i-1] + 1;
+                  }
             }
 	} else {
 		int mid = (start + end)/2;
