@@ -1,6 +1,6 @@
 /*
       https://www.spoj.com/problems/INCSEQ/
-      https://vn.spoj.com/problems/INCVN/       Same problem in Vietnamese but with more tighter TL
+      https://vn.spoj.com/problems/INCVN/       Same problem in Vietnamese but with tighter TL
 
       - The recurrence is not difficult to find, states are the length of the increasing subsequence,
       and the index in which those subsequences end at.
