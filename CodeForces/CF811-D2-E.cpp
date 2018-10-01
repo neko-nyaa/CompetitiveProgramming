@@ -3,9 +3,10 @@
 
       - The query-answering type of problem immediately suggests a tree data structure. Here a segment tree was used.
 
-      - Suppose we divide the matrix in half, and we can solve each half with some simple DFS, we can merge the halves based only on their border.
+      - Suppose we divide the matrix in half, and we can solve each half with some simple DFS, 
+      	we can merge the halves based only on their border.
 
-      - The hardest part now is how to correctly merge them, and how to save enough information in each node to re-use them for the next merges.
+      - The hardest part now is how to correctly merge them, and how to save enough information in each node for the next merges.
 
 */
 
