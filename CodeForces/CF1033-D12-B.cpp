@@ -4,7 +4,7 @@
       - The task is to check if (A*A) - (B*B) is a prime. We will make use of the following identity:
       A^2 - B^2 = (A - B)*(A + B)
 
-      - This is composite if and only if A-B is equal to one, and A+B is a prime. The latter condition can be checked with trial division.
+      - This is prime if and only if A-B is equal to one, and A+B is a prime. The latter condition can be checked with trial division.
 */
 
 #include <bits/stdc++.h>
