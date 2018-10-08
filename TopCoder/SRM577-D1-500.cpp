@@ -1,5 +1,6 @@
 /*
       http://community.topcoder.com/stat?c=problem_statement&pm=12527
+      http://kmjp.hatenablog.jp/entry/2013/09/23/0930
 
       - First, we will rotate the board by 45 degrees. This means a point (x, y) becomes (X-Y, X+Y) after the rotation.
       After the rotation, the original manhattan distance is now equal to the new chebyshev distance.
