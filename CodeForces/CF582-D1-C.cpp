@@ -26,9 +26,7 @@ vector<int> a;
 
 void init() {
       for (int i = 1; i <= 200000; i++) {
-            for (int j = i; j <= 200000; j += i) {
-                  gcd[j] = i;
-            }
+            gcd[i] = __gcd(i, n);
       }
 }
 
@@ -48,8 +46,8 @@ ll solve(int d) {
 
       vector<ll> freq(n+1);
       if (!has_zero) {
-            for (int i = n, j = 1; j <= n; i--, j++) {
-                  freq[i] = j;
+            for (int i = 1; i <= n; i++) {
+                  freq[i] = n;
             }
       } else {
             int start = 1;
@@ -86,9 +84,8 @@ ll solve(int d) {
 
 int main() {
       ios::sync_with_stdio(0); cin.tie(0);
-      init();
 
-      cin >> n; a.resize(n+1);
+      cin >> n; a.resize(n+1); init();
       for (int i = 1; i <= n; i++) {
             cin >> a[i];
       }
