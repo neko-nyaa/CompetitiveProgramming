@@ -12,7 +12,7 @@
       - We can imagine this search technique as a binary tree. To avoid initializing the DSU way too many times, we will descend the tree with BFS.
       This way, we will need to initialize DSU only once per level of the tree.
 
-      - This gives us complexity of O(Q*logM*logQ), plus some inverse ackermann factor.
+      - This gives us complexity of O((Q+M)*logM), plus some inverse ackermann factor.
 */
 
 #include <bits/stdc++.h>
