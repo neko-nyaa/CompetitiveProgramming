@@ -1,9 +1,14 @@
 /*
-      https://codeforces.com/contest/907/problem/F
+      https://codeforces.com/contest/906/problem/D
 
-      - Euler is awesome!!!
-
-      - Both his theorem and his totient function!!!
+      - Euler is awesome! Both his theorem and his totient function! No wonder everything is named after him >.<
+      
+      - This problem uses one of the lesser-known version of Euler's theorem. Link for reference:
+      https://cp-algorithms.com/algebra/phi-function.html --------- "Generalization" section.
+      This problem itself is also listed on the "Practice Problems" section.
+      
+      - There is an important point to notice, that is the Euler phi function converges down very quickly. 
+      So we can use the formula and brute force through all the queries, stopping early when the totient reaches 1.
 */
 
 #include <bits/stdc++.h>
@@ -46,6 +51,7 @@ long long modpow(long long n, long long k, long long M) {
       if (k % 2) return md(tmp*n, M);
       else return tmp;
 }
+
 long long solve(int l, int r, long long M, long long a[]) {
       if (r == l || M == 1) return md(a[l], M);
 
