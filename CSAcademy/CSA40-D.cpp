@@ -5,7 +5,7 @@
 
       - We will insert numbers one by one, in order. Here I will insert from largest to smallest.
 
-      - How to insert number i? Note that if our permutation currently has P elements, then there are a total of P+1 positions to insert number in.
+      - How to insert number i? Note that if our permutation currently has |P| elements, then there are a total of |P+1| positions to insert number in.
       Now our question becomes, how many ways can we insert all N numbers in, such that all conditions are satisfied.
 
       - Let's build a table dp[][], where dp[i][j] is the number of ways to insert the number i into position j.
@@ -19,7 +19,7 @@
             5 3 1 0 0
       - We can see there are 9 ways to insert the number 1 into the permutation.
 
-      - The transition at this point should be clear. dp[i][j] = sum(dp[i+1][k]) for k smaller or larger than j, depending on condition.
+      - The transition at this point should be clear. dp[i][j] = sum(dp[i+1][k]) for k smaller or larger than (or equal to) j, depending on condition.
 
       - How to calculate sum(dp[i+1][k]) quickly a lot of times? This is easy, let's do prefix sum :D
 */
