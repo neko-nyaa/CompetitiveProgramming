@@ -72,8 +72,8 @@ public:
 				// don't color it
 					if (digit(k, j) != 1) {
 						dp[i][j+1][set(k, j, 2)] += dp[i][j][k];
-                                    dp[i][j+1][set(k, j, 2)] %= M;
-                              }
+						dp[i][j+1][set(k, j, 2)] %= M;
+					}
 
 				// color it
 					if (digit(k, j) != 0) {
