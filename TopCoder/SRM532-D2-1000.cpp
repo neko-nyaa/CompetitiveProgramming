@@ -4,11 +4,11 @@
 
 	- Tutorial: https://apps.topcoder.com/wiki/display/tc/SRM+532
 	Explains really really well. Please read it.
-	
+
 	- My way of understanding is, mask DP, but not bitmask or binary mask, it's ternary mask.
-	
+
 	- For each square, we will keep DP[col][row][profile], with profile being a ternary mask denoting it's "profile".
-	When we reach a square, we have two choices: to color it, or not to color it. 
+	When we reach a square, we have two choices: to color it, or not to color it.
 		+ If we decide not to color the square, then we just have to transfer the result from the previous state.
 		+ If we decide to color the square, we will have to find the new profile, and transfer accordingly.
 	- Note that sometimes not both options are available, we can't make our profile invalid.
@@ -32,8 +32,8 @@ public:
 	int pw[10];
 
 	int dp[103][10][6562];		// dp[col][row][profile]
-	int M = 1e9+7; 
-	
+	int M = 1e9+7;
+
 	void init() {
 		pw[0] = 1;
 		for (int i = 1; i < 10; i++) {
@@ -72,8 +72,8 @@ public:
 				// don't color it
 					if (digit(k, j) != 1) {
 						dp[i][j+1][set(k, j, 2)] += dp[i][j][k];
-                        dp[i][j+1][set(k, j, 2)] %= M;
-					} 
+                                    dp[i][j+1][set(k, j, 2)] %= M;
+                              }
 
 				// color it
 					if (digit(k, j) != 0) {
@@ -94,7 +94,7 @@ public:
 
 				}
 			}
-			
+
 			for (int k = 0; k < pw[m]; k++) {
 				dp[i+1][0][k] = dp[i][m][k];
 			}
