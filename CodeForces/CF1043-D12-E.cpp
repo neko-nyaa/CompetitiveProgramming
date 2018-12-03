@@ -13,7 +13,7 @@
         So their difference matters a lot in determining which pair to take!!!
 
       - Let's sort X and Y by their differences. Then calculate prefix sum of our sorted X and Y.
-      Now we can just simply get the score sum for a participant in O(1) (line re-using intended :D)
+      Now we can just simply get the score sum for a participant in O(1) 
 
       - Now we work on U and V pairs. Just subtract min() from them and we're done. There are only 300k pairs.
 */
