@@ -1,5 +1,5 @@
 /*
-	https://hanoi18.kattis.com/problems/hanoi18.lazylearner
+	https://hanoi18.kattis.com/problems/lazylearner
 
 	- Suppose we have a substring [l, r] and a word W. It is easy to check in linear time if W is a subsequence of [l, r] or not.
 
@@ -7,7 +7,7 @@
 	Now, we will divide the queries into 500 batches, with the i-th batch containing queries starting at S[i].
 
 	- Solve the problem 500 times, with each time starting at S[i], answering the i-th query batch.
-	Let's keep N pointers, each corresponding to a word. Each time we move ahead one character, we will move all the corresponding pointers. 
+	Let's keep N pointers, each corresponding to a word. Each time we move ahead one character, we will move all the corresponding pointers.
 
 	- If a pointer moves to the end of the word, that word is now a subsequence, and we will push it in our list of "for answering".
 

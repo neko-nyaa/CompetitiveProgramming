@@ -1,5 +1,5 @@
 /*
-	https://hanoi18.kattis.com/problems/hanoi18.bipartitebattle
+	https://hanoi18.kattis.com/problems/bipartitebattle
 
       - The key idea is here: https://people.eecs.berkeley.edu/~vitchyr/chomp_the_graph.pdf
 
@@ -8,7 +8,7 @@
 
       - In each graph, there are at most a*b edges. So there are 2^(a*b) ways to draw edges. Half of them have even edge count.
 
-      - Our final answer is 2^(sum of all a*b)/2. 
+      - Our final answer is 2^(sum of all a*b)/2.
 */
 
 #include <bits/stdc++.h>

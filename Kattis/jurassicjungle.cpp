@@ -1,5 +1,5 @@
 /*
-	https://hanoi18.kattis.com/problems/hanoi18.jurassicjungle
+	https://hanoi18.kattis.com/problems/jurassicjungle
 
       - The answer exists when we can construct either of the following graphs:
             + A cycle of N vertices.

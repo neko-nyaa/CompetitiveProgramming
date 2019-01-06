@@ -1,11 +1,11 @@
 /*
-	https://hanoi18.kattis.com/problems/hanoi18.grabagraph
+	https://hanoi18.kattis.com/problems/grabagraph
 
       - Without loss of generality, let's assume our source node is 1, and our destination is N (chosen by us).
       We can just swap N and 2 when we output.
 
       - Let's solve the following problem first: "Given graph, find A (count shortest paths)."
-      This can be easily solved with DP. We can model the shortest-path graph as a DAG. 
+      This can be easily solved with DP. We can model the shortest-path graph as a DAG.
       Our recurrence is now dp[node] = sum of all (dp[parents]).
 
       - In fact, since we can put weights on edges, we can fine-tune the weight to our needs. So this is just counting normal paths.
@@ -13,7 +13,7 @@
       - Let's get to the actual problem. We have two graphs to be built. Let's solve them separately.
 
 ---------------------------------------------- GRAPH 1: 72 NODES, 2525 EDGES ----------------------------------------------------------
-      
+
       - Let's build a 62-clique, with the weight of edge (i, j) be |i - j|. Now every paths from 1 to any other node is the shortest.
       The path count from 1 each node reduces to ordered partition problem: https://en.wikipedia.org/wiki/Partition_(number_theory)
       The length of path from 1 to N is |N - 1|, so answer is 2^(length - 1) = 2^(N-2).
@@ -34,7 +34,7 @@
       - Now we just have to sum some F() up to A. By Zeckendorf's theorem, we can greedily pick the largest F() every time.
       So we just do things in the same manner as graph 1.
 
-      - In total, we will need all 88 nodes and around 200 edges for this. 
+      - In total, we will need all 88 nodes and around 200 edges for this.
 */
 
 #include <bits/stdc++.h>

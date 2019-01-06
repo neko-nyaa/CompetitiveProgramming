@@ -1,5 +1,6 @@
 /*
-      https://hanoi18.kattis.com/problems/hanoi18.dividedoughnut
+      https://hanoi18.kattis.com/problems/dividedoughnut
+
       This is one of the problems where the constrain is so tight it requires absolute optimization.
 
       - The key to this problem is intermediate value theorem. Suppose there is a function f() takes a domain [a, b].
