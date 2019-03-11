@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
- 
 /*
 	https://codeforces.com/gym/101620/problem/G
 	Presentation of solutions: http://cerc.hsin.hr/tasks/cerc2017_presentation.pdf
@@ -26,6 +23,9 @@ using namespace std;
 	- We can use a priority queue to maintain the minimum calculated f(X), and update f(U) for every U adjacent to X.
 	So we end up with a solution very similar to Dijkstra's shortest path algorithm!!!!
 */
+
+#include <bits/stdc++.h>
+using namespace std;
 
 typedef long long ll;
 const double INF = 1e18;
